@@ -2,21 +2,15 @@ package hello.carracinggame;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static hello.carracinggame.CarRacingGameApplication.checkLength;
 import static hello.carracinggame.CarRacingGameApplication.executionResult;
 import static hello.carracinggame.CarRacingGameApplication.findWinner;
 import static hello.carracinggame.CarRacingGameApplication.generateRandom;
-import static hello.carracinggame.CarRacingGameApplication.initCarList;
 import static hello.carracinggame.CarRacingGameApplication.moveForward;
-import static hello.carracinggame.CarRacingGameApplication.splitCarName;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CarRacingGameApplicationTest {
 
@@ -25,30 +19,6 @@ class CarRacingGameApplicationTest {
     void get_car_name() {
         Car car = new Car("pobi");
         assertThat(car.getName()).isEqualTo("pobi");
-    }
-
-    @Test
-    @DisplayName("자동차 이름을 쉼표로 구분한다.")
-    void split_car_name() {
-        String cars = "pobi,woni,jun";
-        String[] carNames = splitCarName(cars);
-        assertThat(carNames.length).isEqualTo(3);
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = {"testtest", "qqqqqqqqqqq"})
-    @DisplayName("자동차 이름은 5글자 이하이다.")
-    void car_name_less_than_5(String carName) {
-        assertThatThrownBy(() -> checkLength(carName))
-                .isInstanceOf(IllegalStateException.class)
-                .hasMessageContaining("자동차 이름 길이는 5이하여야 합니다.");
-    }
-
-    @Test
-    @DisplayName("자동차 객체를 만든다.")
-    void init_car_list() {
-        String[] cars = {"pobi", "woni", "jun"};
-        assertThat(initCarList(cars).size()).isEqualTo(3);
     }
 
     @Test

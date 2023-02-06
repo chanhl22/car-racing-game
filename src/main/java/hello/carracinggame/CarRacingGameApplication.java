@@ -5,43 +5,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 @SpringBootApplication
 public class CarRacingGameApplication {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String cars = sc.next();
-		String[] carNames = splitCarName(cars);
-		for (String carName : carNames) {
-			checkLength(carName);
-		}
-		List<Car> carList = initCarList(carNames);
-		int moveCount = sc.nextInt();
-		for (int i = 0; i < moveCount; i++) {
-			carList.forEach(car -> moveForward(car, generateRandom()));
-			System.out.println(executionResult(carList));
-		}
-		System.out.println("최종 우승자 : " + findWinner(carList));
-	}
+		InputData inputData = InputData.inputData();
+		List<Car> cars = CarGenerator.checkCarName(inputData.getCarNameString());
+		int count = inputData.getTryCount();
 
-	public static String[] splitCarName(String cars) {
-		return cars.split(",");
-	}
-
-	public static void checkLength(String carName) throws IllegalStateException {
-		if (carName.length() > 5) {
-			throw new IllegalStateException("자동차 이름 길이는 5이하여야 합니다.");
-		}
-	}
-
-	public static List<Car> initCarList(String[] carNames) {
-		ArrayList<Car> carList = new ArrayList<>();
-		for (String carName : carNames) {
-			carList.add(new Car(carName));
-		}
-		return carList;
+//		for (int i = 0; i < moveCount; i++) {
+//			carList.forEach(car -> moveForward(car, generateRandom()));
+//			System.out.println(executionResult(carList));
+//		}
+//		System.out.println("최종 우승자 : " + findWinner(carList));
 	}
 
 	public static int generateRandom() {
