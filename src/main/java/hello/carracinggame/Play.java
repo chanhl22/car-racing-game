@@ -1,14 +1,15 @@
 package hello.carracinggame;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Play {
 
     public static void play(List<Car> cars, int tryCount) {
+        OutPutData.printExecutionMessage();
         for (int i = 0; i < tryCount; i++) {
             cars.forEach(car -> moveForward(car, RandomUtils.generateRandom()));
-            OutPutData.printExecutionResult(makeExecutionResult(cars));
+            OutPutData.print(makeExecutionResult(cars));
+            OutPutData.printNewLine();
         }
     }
 
