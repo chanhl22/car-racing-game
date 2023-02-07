@@ -11,7 +11,7 @@ public class CarRacingGameApplication {
 		InputData inputData = InputData.inputData();
 		List<Car> cars = CarGenerator.checkCarName(inputData.getCarNameString());
 		int tryCount = inputData.getTryCount();
-		OutPutData.printInputData(inputData.getCarNameString(), inputData.getTryCount());
+		OutputData.printInputData(inputData.getCarNameString(), inputData.getTryCount());
 
 		Play.play(cars, tryCount);
 		Winner.findWinner(cars);

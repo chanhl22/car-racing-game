@@ -3,12 +3,12 @@ package hello.carracinggame;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static hello.carracinggame.OutPutData.makeExecutionMessage;
-import static hello.carracinggame.OutPutData.makeInputCarNameMessage;
-import static hello.carracinggame.OutPutData.makeInputTryCountMessage;
+import static hello.carracinggame.OutputData.makeExecutionMessage;
+import static hello.carracinggame.OutputData.makeInputCarNameMessage;
+import static hello.carracinggame.OutputData.makeInputTryCountMessage;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class OutPutDataTest {
+class OutputDataTest {
 
     @Test
     @DisplayName("입력받은 자동차 이름 출력하기.")

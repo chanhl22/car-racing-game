@@ -6,7 +6,7 @@ import java.util.List;
 public class Winner {
 
     public static void findWinner(List<Car> cars) {
-        OutPutData.print("최종 우승자 : " + findWinnerResult(cars));
+        OutputData.print("최종 우승자 : " + findWinnerResult(cars));
     }
 
     public static String findWinnerResult(List<Car> cars) {
