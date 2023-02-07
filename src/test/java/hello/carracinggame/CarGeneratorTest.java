@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static hello.carracinggame.CarGenerator.checkCarLength;
+import static hello.carracinggame.CarGenerator.checkIsEmpty;
 import static hello.carracinggame.CarGenerator.initCar;
 import static hello.carracinggame.CarGenerator.splitCarName;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,6 +16,14 @@ class CarGeneratorTest {
     @DisplayName("자동차 이름을 쉼표로 구분한다.")
     void split_car_name() {
         assertThat(splitCarName("pobi,woni,jun")).contains("pobi", "woni", "jun");
+    }
+
+    @Test
+    @DisplayName("자동차 이름은 한 개 이상이다.")
+    void car_is_empty() {
+        assertThatThrownBy(() -> checkIsEmpty(new String[]{}))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("[ERROR] 자동차 이름을 한개 이상 입력해주세요.");
     }
 
     @Test
