@@ -5,11 +5,10 @@ import java.util.List;
 
 public class Winner {
 
-    public static void findWinner(List<Car> cars) {
-        OutputData.printWinner(findWinnerResult(cars));
+    public Winner() {
     }
 
-    public static String findWinnerResult(List<Car> cars) {
+    public String findWinnerResult(List<Car> cars) {
         cars.sort((o1, o2) -> o2.getPosition() - o1.getPosition());
 
         ArrayList<String> winners = new ArrayList<>();

@@ -4,35 +4,16 @@ import java.util.Scanner;
 
 public class InputData {
 
-    private String carNameString;
-    private int tryCount;
+    private final Scanner sc = new Scanner(System.in);
 
-    public static InputData inputData() {
-        Scanner sc = new Scanner(System.in);
-        String carNameString = sc.next();
-        int tryCount = sc.nextInt();
-
-        return new InputData(carNameString, tryCount);
+    public InputData() {
     }
 
-    public InputData(String carNameString) {
-        this.carNameString = carNameString;
+    public String inputCarNames() {
+        return sc.next();
     }
 
-    public InputData(int tryCount) {
-        this.tryCount = tryCount;
-    }
-
-    public InputData(String carNameString, int tryCount) {
-        this.carNameString = carNameString;
-        this.tryCount = tryCount;
-    }
-
-    public String getCarNameString() {
-        return carNameString;
-    }
-
-    public int getTryCount() {
-        return tryCount;
+    public int inputTryCount() {
+        return sc.nextInt();
     }
 }

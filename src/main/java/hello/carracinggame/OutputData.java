@@ -7,10 +7,15 @@ public class OutputData {
     private static final String EXECUTION_RESULT_MESSAGE = "실행 결과";
     private static final String WINNER_MESSAGE = "최종 우승자 : ";
 
-    public static void printInputData(String carNameString, int tryCount) {
-        print(makeInputCarNameMessage(carNameString));
-        print(makeInputTryCountMessage(tryCount));
-        printNewLine();
+    public OutputData() {
+    }
+
+    public void printInputCarNameMessage() {
+        print(INPUT_CAR_NAME_MESSAGE);
+    }
+
+    public void printInputTryCountMessage() {
+        print(INPUT_TRY_COUNT_MESSAGE);
     }
 
     public static void printNewLine() {
@@ -21,23 +26,11 @@ public class OutputData {
         System.out.println(result);
     }
 
-    public static String makeInputCarNameMessage(String carNameString) {
-        return INPUT_CAR_NAME_MESSAGE + "\n" + carNameString;
+    public void printExecutionMessage() {
+        print(EXECUTION_RESULT_MESSAGE);
     }
 
-    public static String makeInputTryCountMessage(int tryCount) {
-        return INPUT_TRY_COUNT_MESSAGE + "\n" + tryCount;
-    }
-
-    public static void printExecutionMessage() {
-        print(makeExecutionMessage());
-    }
-
-    public static String makeExecutionMessage() {
-        return EXECUTION_RESULT_MESSAGE;
-    }
-
-    public static void printWinner(String winner) {
+    public void printWinner(String winner) {
         print(WINNER_MESSAGE + winner);
     }
 }

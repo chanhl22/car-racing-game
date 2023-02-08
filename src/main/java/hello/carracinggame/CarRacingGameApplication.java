@@ -8,12 +8,7 @@ import java.util.List;
 public class CarRacingGameApplication {
 
 	public static void main(String[] args) {
-		InputData inputData = InputData.inputData();
-		List<Car> cars = CarGenerator.checkCarName(inputData.getCarNameString());
-		int tryCount = inputData.getTryCount();
-		OutputData.printInputData(inputData.getCarNameString(), inputData.getTryCount());
-
-		Play.play(cars, tryCount);
-		Winner.findWinner(cars);
+		CarRacingGameService carRacingGameService = new CarRacingGameService();
+		carRacingGameService.startGame();
 	}
 }
