@@ -4,8 +4,10 @@ import java.util.List;
 
 public class Play {
 
-    public static void play(List<Car> cars, int tryCount) {
-        OutputData.printExecutionMessage();
+    public Play() {
+    }
+
+    public void startGame(List<Car> cars, int tryCount) {
         for (int i = 0; i < tryCount; i++) {
             cars.forEach(car -> moveForward(car, RandomUtils.generateRandom()));
             OutputData.print(makeExecutionResult(cars));
@@ -13,13 +15,13 @@ public class Play {
         }
     }
 
-    public static void moveForward(Car car, int number) {
+    public void moveForward(Car car, int number) {
         if (number >= 4) {
             car.updatePosition();
         }
     }
 
-    public static String makeExecutionResult(List<Car> cars) {
+    public String makeExecutionResult(List<Car> cars) {
         StringBuilder sb = new StringBuilder();
         for (Car car : cars) {
             int position = car.getPosition();
