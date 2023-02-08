@@ -27,6 +27,7 @@ public class OutputData {
     }
 
     public void printExecutionMessage() {
+        printNewLine();
         print(EXECUTION_RESULT_MESSAGE);
     }
 
