@@ -7,13 +7,18 @@ public class Play {
     public Play() {
     }
 
-    public void startGame(List<Car> cars, int tryCount) {
-        for (int i = 0; i < tryCount; i++) {
-            cars.forEach(car -> moveForward(car, RandomUtils.generateRandom()));
-            OutputData.print(makeExecutionResult(cars));
-            OutputData.printNewLine();
-        }
+    public List<Car> aRoundOfGame(List<String> nameOfCars) {
+
+        return null;
     }
+
+//    public void startGame(List<Car> cars, int tryCount) {
+//        for (int i = 0; i < tryCount; i++) {
+//            cars.forEach(car -> moveForward(car, RandomUtils.generateRandom()));
+//            OutputData.print(makeExecutionResult(cars));
+//            OutputData.printNewLine();
+//        }
+//    }
 
     public void moveForward(Car car, int number) {
         if (number >= 4) {

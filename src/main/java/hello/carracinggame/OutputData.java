@@ -10,11 +10,11 @@ public class OutputData {
     public OutputData() {
     }
 
-    public void printInputCarNameMessage() {
+    public void printNameOfCarsInputMessage() {
         print(INPUT_CAR_NAME_MESSAGE);
     }
 
-    public void printInputTryCountMessage() {
+    public void printTryCountInputMessage() {
         print(INPUT_TRY_COUNT_MESSAGE);
     }
 
