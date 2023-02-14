@@ -1,7 +1,8 @@
-package hello.carracinggame;
+package hello.carracinggame.domain;
 
 public class Car {
 
+    private final static int MINIMUM = 4;
     private String name;
     private int position;
 
@@ -22,7 +23,13 @@ public class Car {
         return position;
     }
 
-    public void updatePosition() {
-        this.position++;
+    public void moveForward(int randomNumber) {
+        if (randomNumber >= MINIMUM) {
+            this.position++;
+        }
+    }
+
+    public boolean isMaximumPosition(int maxPosition) {
+        return this.position == maxPosition;
     }
 }

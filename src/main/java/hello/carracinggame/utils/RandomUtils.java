@@ -1,10 +1,13 @@
-package hello.carracinggame;
+package hello.carracinggame.utils;
 
 import java.util.Random;
 
 public class RandomUtils {
 
-    public static int generateRandom() {
+    public RandomUtils() {
+    }
+
+    public int generateRandom() {
         Random random = new Random();
         return random.nextInt(9);
     }
