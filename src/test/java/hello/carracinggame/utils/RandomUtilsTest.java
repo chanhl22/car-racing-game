@@ -1,6 +1,5 @@
 package hello.carracinggame.utils;
 
-import hello.carracinggame.utils.RandomUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -28,6 +28,7 @@ public class CarRacingGameController {
         validator.validateNameOfCars(nameOfCars);
 
         startGame(nameOfCars, tryCount);
+        findWinner();
     }
 
     private List<String> readyNameOfCars() {
@@ -47,5 +48,10 @@ public class CarRacingGameController {
             play.aRoundOfGame();
             outputData.printExecutionResult(play.getCars());
         }
+    }
+
+    private void findWinner() {
+        List<String> winners = play.findWinner();
+        outputData.printWinner(winners);
     }
 }

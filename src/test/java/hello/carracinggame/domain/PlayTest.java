@@ -28,4 +28,27 @@ class PlayTest {
                 .anyMatch(car -> car.getName().contains("woni"))
                 .anyMatch(car -> car.getName().contains("jun"));
     }
+
+    @Test
+    @DisplayName("게임을 진행한다.")
+    void a_round_of_game() {
+        Car car1 = new Car("pobi", 5);
+        Car car2 = new Car("woni", 2);
+        Car car3 = new Car("jun", 3);
+        List<Car> cars = Arrays.asList(car1, car2, car3);
+        Play play = new Play(cars);
+        play.aRoundOfGame();
+        assertThat(play.getCars().get(0).getPosition()).matches(position -> position == 5 || position == 6);
+    }
+
+    @Test
+    @DisplayName("우승자를 찾는다.")
+    void find_winner() {
+        Car car1 = new Car("pobi", 5);
+        Car car2 = new Car("woni", 2);
+        Car car3 = new Car("jun", 3);
+        List<Car> cars = Arrays.asList(car1, car2, car3);
+        Play play = new Play(cars);
+        assertThat(play.findWinner().get(0)).isEqualTo("pobi");
+    }
 }

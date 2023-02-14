@@ -61,7 +61,11 @@ public class OutputData {
         return car.getName() + COLON + countString + NEW_LINE;
     }
 
-    public void printWinner(String winner) {
-        print(WINNER_MESSAGE + winner);
+    public void printWinner(List<String> winners) {
+        print(WINNER_MESSAGE + makeWinnerResult(winners));
+    }
+
+    private String makeWinnerResult(List<String> winners) {
+        return String.join(", ", winners);
     }
 }
