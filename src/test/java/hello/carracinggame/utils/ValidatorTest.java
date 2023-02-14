@@ -1,5 +1,6 @@
-package hello.carracinggame;
+package hello.carracinggame.utils;
 
+import hello.carracinggame.utils.Validator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

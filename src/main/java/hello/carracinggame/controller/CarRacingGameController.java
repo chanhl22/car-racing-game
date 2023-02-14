@@ -1,6 +1,9 @@
-package hello.carracinggame;
+package hello.carracinggame.controller;
 
+import hello.carracinggame.domain.Play;
+import hello.carracinggame.utils.Validator;
 import hello.carracinggame.view.InputData;
+import hello.carracinggame.view.OutputData;
 
 import java.util.List;
 
@@ -39,9 +42,10 @@ public class CarRacingGameController {
 
     private void startGame(List<String> nameOfCars, int tryCount) {
         outputData.printExecutionMessage();
+        play.readyGame(nameOfCars);
         while (tryCount-- > 0) {
-            List<Car> cars = play.aRoundOfGame(nameOfCars);
-//            outputData.printExecutionResult(cars);
+            play.aRoundOfGame();
+            outputData.printExecutionResult(play.getCars());
         }
     }
 }

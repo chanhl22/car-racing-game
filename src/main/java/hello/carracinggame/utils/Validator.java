@@ -1,4 +1,4 @@
-package hello.carracinggame;
+package hello.carracinggame.utils;
 
 import java.util.List;
 

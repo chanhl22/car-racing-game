@@ -1,5 +1,7 @@
 package hello.carracinggame;
 
+import hello.carracinggame.domain.Car;
+
 import java.util.ArrayList;
 import java.util.List;
 
