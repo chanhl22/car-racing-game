@@ -2,7 +2,7 @@ package hello.carracinggame;
 
 import hello.carracinggame.controller.CarRacingGameController;
 import hello.carracinggame.domain.Play;
-import hello.carracinggame.utils.RandomUtils;
+import hello.carracinggame.utils.RandomGenerator;
 import hello.carracinggame.utils.Validator;
 import hello.carracinggame.view.InputData;
 import hello.carracinggame.view.OutputData;
@@ -16,7 +16,7 @@ public class CarRacingGameApplication {
                 new InputData(),
                 new OutputData(),
                 new Validator(),
-                new Play(new RandomUtils()));
+                new Play(new RandomGenerator()));
         controller.start();
     }
 }

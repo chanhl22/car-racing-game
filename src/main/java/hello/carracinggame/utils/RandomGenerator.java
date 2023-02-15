@@ -2,9 +2,9 @@ package hello.carracinggame.utils;
 
 import java.util.Random;
 
-public class RandomUtils implements MoveCondition{
+public class RandomGenerator implements MoveCondition {
 
-    public RandomUtils() {
+    public RandomGenerator() {
     }
 
     @Override

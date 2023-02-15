@@ -1,6 +1,6 @@
 package hello.carracinggame.domain;
 
-import hello.carracinggame.utils.RandomUtils;
+import hello.carracinggame.utils.RandomGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class PlayTest {
     @Test
     @DisplayName("자동차들을 가져온다.")
     void execution_result() {
-        Play play = new Play(new RandomUtils());
+        Play play = new Play(new RandomGenerator());
         List<Car> cars = play.getCars();
         assertThat(cars).isNullOrEmpty();
     }
@@ -22,7 +22,7 @@ class PlayTest {
     @Test
     @DisplayName("게임에 사용할 자동차들을 생성한다.")
     void ready_game() {
-        Play play = new Play(new RandomUtils());
+        Play play = new Play(new RandomGenerator());
         List<String> nameOfCars = Arrays.asList("pobi", "woni", "jun");
         play.readyGame(nameOfCars);
         assertThat(play.getCars()).anyMatch(car -> car.getName().contains("pobi"))
@@ -37,7 +37,7 @@ class PlayTest {
         Car car2 = new Car("woni", 2);
         Car car3 = new Car("jun", 3);
         List<Car> cars = Arrays.asList(car1, car2, car3);
-        Play play = new Play(cars, new RandomUtils());
+        Play play = new Play(cars, new RandomGenerator());
         play.playARoundOfGame();
         assertThat(play.getCars().get(0).getPosition()).matches(position -> position == 5 || position == 6);
     }
@@ -49,7 +49,7 @@ class PlayTest {
         Car car2 = new Car("woni", 2);
         Car car3 = new Car("jun", 3);
         List<Car> cars = Arrays.asList(car1, car2, car3);
-        Play play = new Play(cars, new RandomUtils());
+        Play play = new Play(cars, new RandomGenerator());
         assertThat(play.findWinner().get(0)).isEqualTo("pobi");
     }
 }
