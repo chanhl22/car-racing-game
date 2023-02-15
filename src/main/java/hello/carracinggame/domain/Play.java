@@ -25,7 +25,7 @@ public class Play {
                 .collect(Collectors.toList());
     }
 
-    public void aRoundOfGame() {
+    public void playARoundOfGame() {
         this.cars.forEach(car -> car.moveForward(randomUtils.generateRandom()));
     }
 

@@ -37,7 +37,7 @@ class PlayTest {
         Car car3 = new Car("jun", 3);
         List<Car> cars = Arrays.asList(car1, car2, car3);
         Play play = new Play(cars);
-        play.aRoundOfGame();
+        play.playARoundOfGame();
         assertThat(play.getCars().get(0).getPosition()).matches(position -> position == 5 || position == 6);
     }
 

@@ -45,7 +45,7 @@ public class CarRacingGameController {
         outputData.printExecutionMessage();
         play.readyGame(nameOfCars);
         while (tryCount-- > 0) {
-            play.aRoundOfGame();
+            play.playARoundOfGame();
             outputData.printExecutionResult(play.getCars());
         }
     }
