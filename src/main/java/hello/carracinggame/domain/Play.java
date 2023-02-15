@@ -1,6 +1,6 @@
 package hello.carracinggame.domain;
 
-import hello.carracinggame.utils.RandomUtils;
+import hello.carracinggame.utils.MoveCondition;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,15 +8,15 @@ import java.util.stream.Collectors;
 public class Play {
 
     private List<Car> cars;
-    private final RandomUtils randomUtils;
+    private final MoveCondition moveCondition;
 
-    public Play() {
-        this.randomUtils = new RandomUtils();
+    public Play(MoveCondition moveCondition) {
+        this.moveCondition = moveCondition;
     }
 
-    public Play(List<Car> cars) {
+    public Play(List<Car> cars, MoveCondition moveCondition) {
         this.cars = cars;
-        this.randomUtils = new RandomUtils();
+        this.moveCondition = moveCondition;
     }
 
     public void readyGame(List<String> nameOfCars) {
@@ -26,7 +26,7 @@ public class Play {
     }
 
     public void playARoundOfGame() {
-        this.cars.forEach(car -> car.moveForward(randomUtils.generateRandom()));
+        this.cars.forEach(car -> car.moveForward(moveCondition.getMoveCondition()));
     }
 
     public List<Car> getCars() {

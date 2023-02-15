@@ -2,12 +2,17 @@ package hello.carracinggame.utils;
 
 import java.util.Random;
 
-public class RandomUtils {
+public class RandomUtils implements MoveCondition{
 
     public RandomUtils() {
     }
 
-    public int generateRandom() {
+    @Override
+    public int getMoveCondition() {
+        return generateRandom();
+    }
+
+    private int generateRandom() {
         Random random = new Random();
         return random.nextInt(9);
     }

@@ -11,7 +11,7 @@ class RandomUtilsTest {
     @DisplayName("난수를 생성한다.")
     void random_number_generate() {
         RandomUtils randomUtils = new RandomUtils();
-        assertThat(randomUtils.generateRandom())
+        assertThat(randomUtils.getMoveCondition())
                 .isGreaterThanOrEqualTo(0)
                 .isLessThanOrEqualTo(9);
     }
