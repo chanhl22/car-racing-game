@@ -14,11 +14,11 @@ public class CarRacingGameController {
     private final Validator validator;
     private final Play play;
 
-    public CarRacingGameController() {
-        this.inputData = new InputData();
-        this.outputData = new OutputData();
-        this.validator = new Validator();
-        this.play = new Play();
+    public CarRacingGameController(InputData inputData, OutputData outputData, Validator validator, Play play) {
+        this.inputData = inputData;
+        this.outputData = outputData;
+        this.validator = validator;
+        this.play = play;
     }
 
     public void start() {
