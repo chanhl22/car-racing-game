@@ -23,10 +23,11 @@ public class Car {
         return position;
     }
 
-    public void moveForward(int randomNumber) {
+    public Car moveForward(int randomNumber) {
         if (randomNumber >= MINIMUM) {
             this.position++;
         }
+        return new Car(this.name, this.position);
     }
 
     public boolean isMaximumPosition(int maxPosition) {

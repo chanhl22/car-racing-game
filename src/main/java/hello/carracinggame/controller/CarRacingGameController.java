@@ -1,6 +1,7 @@
 package hello.carracinggame.controller;
 
 import hello.carracinggame.domain.Play;
+import hello.carracinggame.domain.dto.GameResult;
 import hello.carracinggame.utils.Validator;
 import hello.carracinggame.view.InputData;
 import hello.carracinggame.view.OutputData;
@@ -43,11 +44,8 @@ public class CarRacingGameController {
 
     private void startGame(List<String> nameOfCars, int tryCount) {
         outputData.printExecutionMessage();
-        play.readyGame(nameOfCars);
-        while (tryCount-- > 0) {
-            play.playARoundOfGame();
-            outputData.printExecutionResult(play.getCars());
-        }
+        GameResult gameResult = play.playGame(nameOfCars, tryCount);
+        outputData.printExecutionResult(gameResult);
     }
 
     private void findWinner() {
