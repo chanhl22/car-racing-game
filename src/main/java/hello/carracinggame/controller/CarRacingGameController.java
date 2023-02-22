@@ -43,9 +43,8 @@ public class CarRacingGameController {
     }
 
     private void startGame(List<String> nameOfCars, int tryCount) {
-        outputData.printExecutionMessage();
         GameResult gameResult = play.playGame(nameOfCars, tryCount);
-        outputData.printExecutionResult(gameResult);
+        outputData.printGameResult(gameResult);
     }
 
     private void findWinner() {

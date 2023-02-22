@@ -35,12 +35,17 @@ public class OutputData {
         System.out.println(result);
     }
 
-    public void printExecutionMessage() {
+    public void printGameResult(GameResult gameResult) {
+        printExecutionMessage();
+        printExecutionResult(gameResult);
+    }
+
+    private void printExecutionMessage() {
         printNewLine();
         print(EXECUTION_RESULT_MESSAGE);
     }
 
-    public void printExecutionResult(GameResult gameResult) {
+    private void printExecutionResult(GameResult gameResult) {
         gameResult.getRecordGameResults()
                         .forEach(cars -> {
                             print(makeExecutionResult(cars));
