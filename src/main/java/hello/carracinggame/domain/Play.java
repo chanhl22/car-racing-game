@@ -50,7 +50,7 @@ public class Play {
                 .collect(Collectors.toList());
     }
 
-    private Integer findMaxPosition() {
+    private int findMaxPosition() {
         return this.cars.stream()
                 .max((o1, o2) -> o1.getPosition() - o2.getPosition())
                 .map(Car::getPosition)
