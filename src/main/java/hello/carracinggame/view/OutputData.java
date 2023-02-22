@@ -1,6 +1,7 @@
 package hello.carracinggame.view;
 
 import hello.carracinggame.domain.Car;
+import hello.carracinggame.domain.dto.GameResult;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,9 +40,12 @@ public class OutputData {
         print(EXECUTION_RESULT_MESSAGE);
     }
 
-    public void printExecutionResult(List<Car> cars) {
-        print(makeExecutionResult(cars));
-        printNewLine();
+    public void printExecutionResult(GameResult gameResult) {
+        gameResult.getRecordGameResults()
+                        .forEach(cars -> {
+                            print(makeExecutionResult(cars));
+                            printNewLine();
+                        });
     }
 
     private String makeExecutionResult(List<Car> cars) {

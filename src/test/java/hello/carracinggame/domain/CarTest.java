@@ -25,7 +25,6 @@ class CarTest {
     @DisplayName("난수가 4보다 크다면 자동차 현재 위치를 변경한다.")
     void update_car_position() {
         Car car = new Car("pobi", 5);
-        car.moveForward(6);
-        assertThat(car.getPosition()).isEqualTo(6);
+        assertThat(car.moveForward(6).getPosition()).isEqualTo(6);
     }
 }
