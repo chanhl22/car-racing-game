@@ -16,14 +16,11 @@ public class OutputData {
     private static final String COLON  = " : ";
     private static final String NEW_LINE  = "\n";
 
-    public OutputData() {
-    }
-
-    public void printNameOfCarsInputMessage() {
+    public static void printNameOfCarsInputMessage() {
         print(INPUT_CAR_NAME_MESSAGE);
     }
 
-    public void printTryCountInputMessage() {
+    public static void printTryCountInputMessage() {
         print(INPUT_TRY_COUNT_MESSAGE);
     }
 
@@ -35,17 +32,17 @@ public class OutputData {
         System.out.println(result);
     }
 
-    public void printGameResult(GameResult gameResult) {
+    public static void printGameResult(GameResult gameResult) {
         printExecutionMessage();
         printExecutionResult(gameResult);
     }
 
-    private void printExecutionMessage() {
+    private static void printExecutionMessage() {
         printNewLine();
         print(EXECUTION_RESULT_MESSAGE);
     }
 
-    private void printExecutionResult(GameResult gameResult) {
+    private static void printExecutionResult(GameResult gameResult) {
         gameResult.getRecordGameResults()
                         .forEach(cars -> {
                             print(makeExecutionResult(cars));
@@ -53,9 +50,9 @@ public class OutputData {
                         });
     }
 
-    private String makeExecutionResult(List<Car> cars) {
+    private static String makeExecutionResult(List<Car> cars) {
         List<String> results = cars.stream()
-                .map(this::makeEachCarExecutionResult)
+                .map(OutputData::makeEachCarExecutionResult)
                 .collect(Collectors.toList());
 
         StringBuilder listString = new StringBuilder();
@@ -64,17 +61,17 @@ public class OutputData {
         return listString.toString();
     }
 
-    private String makeEachCarExecutionResult(Car car) {
+    private static String makeEachCarExecutionResult(Car car) {
         int position = car.getPosition();
         String countString = HYPHEN.repeat(Math.max(0, position));
         return car.getName() + COLON + countString + NEW_LINE;
     }
 
-    public void printWinner(List<String> winners) {
+    public static void printWinner(List<String> winners) {
         print(WINNER_MESSAGE + makeWinnerResult(winners));
     }
 
-    private String makeWinnerResult(List<String> winners) {
+    private static String makeWinnerResult(List<String> winners) {
         return String.join(", ", winners);
     }
 }

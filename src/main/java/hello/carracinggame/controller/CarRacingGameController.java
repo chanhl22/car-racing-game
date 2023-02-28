@@ -10,14 +10,10 @@ import java.util.List;
 
 public class CarRacingGameController {
 
-    private final InputData inputData;
-    private final OutputData outputData;
     private final Validator validator;
     private final Play play;
 
-    public CarRacingGameController(InputData inputData, OutputData outputData, Validator validator, Play play) {
-        this.inputData = inputData;
-        this.outputData = outputData;
+    public CarRacingGameController(Validator validator, Play play) {
         this.validator = validator;
         this.play = play;
     }
@@ -33,22 +29,22 @@ public class CarRacingGameController {
     }
 
     private List<String> readyNameOfCars() {
-        outputData.printNameOfCarsInputMessage();
-        return inputData.getNameOfCars();
+        OutputData.printNameOfCarsInputMessage();
+        return InputData.getNameOfCars();
     }
 
     private int readyTryCount() {
-        outputData.printTryCountInputMessage();
-        return inputData.getTryCount();
+        OutputData.printTryCountInputMessage();
+        return InputData.getTryCount();
     }
 
     private void startGame(List<String> nameOfCars, int tryCount) {
         GameResult gameResult = play.playGame(nameOfCars, tryCount);
-        outputData.printGameResult(gameResult);
+        OutputData.printGameResult(gameResult);
     }
 
     private void findWinner() {
         List<String> winners = play.findWinner();
-        outputData.printWinner(winners);
+        OutputData.printWinner(winners);
     }
 }
