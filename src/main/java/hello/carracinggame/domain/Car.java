@@ -3,7 +3,7 @@ package hello.carracinggame.domain;
 public class Car {
 
     private final static int MINIMUM = 4;
-    private String name;
+    private final String name;
     private int position;
 
     public Car(String name) {

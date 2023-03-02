@@ -7,7 +7,7 @@ import java.util.List;
 
 public class GameResult {
 
-    private List<List<Car>> recordGameResults = new ArrayList<>();
+    private final List<List<Car>> recordGameResults = new ArrayList<>();
 
     public void addGameResult(List<Car> cars) {
         this.recordGameResults.add(cars);
