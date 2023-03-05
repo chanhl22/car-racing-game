@@ -1,24 +1,25 @@
 package hello.carracinggame.domain;
 
 import hello.carracinggame.domain.dto.GameResult;
-import hello.carracinggame.utils.MoveCondition;
+import hello.carracinggame.utils.MovingCondition;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Play {
 
     private List<Car> cars = new ArrayList<>();
-    private final MoveCondition moveCondition;
+    private final MovingCondition movingCondition;
 
-    public Play(MoveCondition moveCondition) {
-        this.moveCondition = moveCondition;
+    public Play(MovingCondition movingCondition) {
+        this.movingCondition = movingCondition;
     }
 
-    public Play(List<Car> cars, MoveCondition moveCondition) {
+    public Play(List<Car> cars, MovingCondition movingCondition) {
         this.cars = cars;
-        this.moveCondition = moveCondition;
+        this.movingCondition = movingCondition;
     }
 
     public GameResult playGame(List<String> nameOfCars, int tryCount) {
@@ -39,20 +40,20 @@ public class Play {
 
     private List<Car> playARoundOfGame() {
         return this.cars.stream()
-                .map(car -> car.moveForward(moveCondition.getMoveCondition()))
+                .map(car -> car.moveForward(movingCondition.getMovingCondition()))
                 .collect(Collectors.toList());
     }
 
     public List<String> findWinner() {
         return this.cars.stream()
-                .filter(car -> car.isMaximumPosition(findMaxPosition()))
+                .filter(car -> car.isSamePosition(findMaxPosition()))
                 .map(Car::getName)
                 .collect(Collectors.toList());
     }
 
     private int findMaxPosition() {
         return this.cars.stream()
-                .max((o1, o2) -> o1.getPosition() - o2.getPosition())
+                .max(Comparator.comparingInt(Car::getPosition))
                 .map(Car::getPosition)
                 .orElseThrow(() -> new IllegalStateException("[ERROR] 우승자가 없습니다."));
     }

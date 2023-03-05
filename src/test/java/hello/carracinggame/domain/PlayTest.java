@@ -19,7 +19,9 @@ class PlayTest {
         Play play = new Play(new RandomGenerator());
         List<String> nameOfCars = Arrays.asList("pobi", "woni", "jun");
         GameResult gameResult = play.playGame(nameOfCars, 1);
+
         List<List<Car>> recordGameResults = gameResult.getRecordGameResults();
+
         assertAll(
                 () -> assertThat(recordGameResults.get(0).get(0).getName())
                         .isEqualTo("pobi"),
@@ -35,7 +37,9 @@ class PlayTest {
         Car car2 = new Car("woni", 2);
         Car car3 = new Car("jun", 3);
         List<Car> cars = Arrays.asList(car1, car2, car3);
+
         Play play = new Play(cars, new RandomGenerator());
+
         assertThat(play.findWinner().get(0)).isEqualTo("pobi");
     }
 }

@@ -2,18 +2,20 @@ package hello.carracinggame.utils;
 
 import java.util.Random;
 
-public class RandomGenerator implements MoveCondition {
+public class RandomGenerator implements MovingCondition {
+
+    static final Random random = new Random();
+    static final int MAXIMUM_LIMIT = 9;
 
     public RandomGenerator() {
     }
 
     @Override
-    public int getMoveCondition() {
+    public int getMovingCondition() {
         return generateRandom();
     }
 
     private int generateRandom() {
-        Random random = new Random();
-        return random.nextInt(9);
+        return random.nextInt(MAXIMUM_LIMIT);
     }
 }

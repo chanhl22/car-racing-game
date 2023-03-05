@@ -15,6 +15,7 @@ class GameResultTest {
     @DisplayName("게임 결과를 가져온다.")
     void get_result() {
         GameResult gameResult = new GameResult();
+
         assertThat(gameResult.getRecordGameResults().size()).isEqualTo(0);
     }
 
@@ -26,7 +27,9 @@ class GameResultTest {
         Car car2 = new Car("woni", 2);
         Car car3 = new Car("jun", 3);
         List<Car> cars = Arrays.asList(car1, car2, car3);
+
         gameResult.addGameResult(cars);
+
         assertThat(gameResult.getRecordGameResults().size()).isEqualTo(1);
     }
 }

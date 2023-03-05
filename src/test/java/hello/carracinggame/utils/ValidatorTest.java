@@ -17,6 +17,7 @@ class ValidatorTest {
     void car_is_empty() {
         Validator validator = new Validator();
         ArrayList<String> nameOfCars = new ArrayList<>();
+
         assertThatThrownBy(() -> validator.checkIsEmpty(nameOfCars))
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessageContaining("[ERROR] 자동차 이름을 한개 이상 입력해주세요.");
@@ -27,6 +28,7 @@ class ValidatorTest {
     void car_name_less_than_5() {
         Validator validator = new Validator();
         List<String> nameOfCars = Arrays.asList("Kassadin", "Anivia", "Viktor");
+
         assertThatThrownBy(() -> validator.checkLength(nameOfCars))
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessageContaining("[ERROR] 자동차 이름 길이는 5이하여야 합니다.");

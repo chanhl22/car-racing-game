@@ -7,13 +7,13 @@ import java.util.List;
 
 public class GameResult {
 
-    private List<List<Car>> recordGameResults = new ArrayList<>();
+    private final List<List<Car>> gameRecords = new ArrayList<>();
 
     public void addGameResult(List<Car> cars) {
-        this.recordGameResults.add(cars);
+        this.gameRecords.add(cars);
     }
 
     public List<List<Car>> getRecordGameResults() {
-        return recordGameResults;
+        return gameRecords;
     }
 }

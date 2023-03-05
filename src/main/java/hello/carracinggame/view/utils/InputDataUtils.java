@@ -7,10 +7,7 @@ public class InputDataUtils {
 
     private static final String COMMA = ",";
 
-    public InputDataUtils() {
-    }
-
-    public List<String> splitWithComma(String carNames) {
+    public static List<String> splitWithComma(String carNames) {
         return Arrays.asList(carNames.split(COMMA));
     }
 }

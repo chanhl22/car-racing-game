@@ -7,18 +7,13 @@ import java.util.Scanner;
 
 public class InputData {
 
-    private final Scanner sc = new Scanner(System.in);
-    private final InputDataUtils inputDataUtils;
+    private static final Scanner sc = new Scanner(System.in);
 
-    public InputData() {
-        inputDataUtils = new InputDataUtils();
+    public static List<String> getNameOfCars() {
+        return InputDataUtils.splitWithComma(sc.next());
     }
 
-    public List<String> getNameOfCars() {
-        return inputDataUtils.splitWithComma(sc.next());
-    }
-
-    public int getTryCount() {
+    public static int getTryCount() {
         return sc.nextInt();
     }
 }
