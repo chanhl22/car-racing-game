@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class RandomGenerator implements MovingCondition {
 
+    static final Random random = new Random();
+
     public RandomGenerator() {
     }
 
@@ -13,7 +15,6 @@ public class RandomGenerator implements MovingCondition {
     }
 
     private int generateRandom() {
-        Random random = new Random();
         return random.nextInt(9);
     }
 }
