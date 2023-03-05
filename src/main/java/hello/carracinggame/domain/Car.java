@@ -22,8 +22,8 @@ public class Car {
         return new Car(this.name, this.position);
     }
 
-    public boolean isMaximumPosition(int maxPosition) {
-        return this.position == maxPosition;
+    public boolean isSamePosition(int position) {
+        return this.position == position;
     }
 
     public String getName() {

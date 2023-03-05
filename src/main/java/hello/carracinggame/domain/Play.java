@@ -45,7 +45,7 @@ public class Play {
 
     public List<String> findWinner() {
         return this.cars.stream()
-                .filter(car -> car.isMaximumPosition(findMaxPosition()))
+                .filter(car -> car.isSamePosition(findMaxPosition()))
                 .map(Car::getName)
                 .collect(Collectors.toList());
     }
