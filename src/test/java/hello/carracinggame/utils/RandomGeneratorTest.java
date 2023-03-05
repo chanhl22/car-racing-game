@@ -11,7 +11,7 @@ class RandomGeneratorTest {
     @DisplayName("난수를 생성한다.")
     void random_number_generate() {
         RandomGenerator randomGenerator = new RandomGenerator();
-        assertThat(randomGenerator.getMoveCondition())
+        assertThat(randomGenerator.getMovingCondition())
                 .isGreaterThanOrEqualTo(0)
                 .isLessThanOrEqualTo(9);
     }

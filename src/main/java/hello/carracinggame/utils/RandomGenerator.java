@@ -2,13 +2,13 @@ package hello.carracinggame.utils;
 
 import java.util.Random;
 
-public class RandomGenerator implements MoveCondition {
+public class RandomGenerator implements MovingCondition {
 
     public RandomGenerator() {
     }
 
     @Override
-    public int getMoveCondition() {
+    public int getMovingCondition() {
         return generateRandom();
     }
 

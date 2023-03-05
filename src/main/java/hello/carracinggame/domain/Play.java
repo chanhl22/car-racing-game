@@ -1,7 +1,7 @@
 package hello.carracinggame.domain;
 
 import hello.carracinggame.domain.dto.GameResult;
-import hello.carracinggame.utils.MoveCondition;
+import hello.carracinggame.utils.MovingCondition;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -11,15 +11,15 @@ import java.util.stream.Collectors;
 public class Play {
 
     private List<Car> cars = new ArrayList<>();
-    private final MoveCondition moveCondition;
+    private final MovingCondition movingCondition;
 
-    public Play(MoveCondition moveCondition) {
-        this.moveCondition = moveCondition;
+    public Play(MovingCondition movingCondition) {
+        this.movingCondition = movingCondition;
     }
 
-    public Play(List<Car> cars, MoveCondition moveCondition) {
+    public Play(List<Car> cars, MovingCondition movingCondition) {
         this.cars = cars;
-        this.moveCondition = moveCondition;
+        this.movingCondition = movingCondition;
     }
 
     public GameResult playGame(List<String> nameOfCars, int tryCount) {
@@ -40,7 +40,7 @@ public class Play {
 
     private List<Car> playARoundOfGame() {
         return this.cars.stream()
-                .map(car -> car.moveForward(moveCondition.getMoveCondition()))
+                .map(car -> car.moveForward(movingCondition.getMovingCondition()))
                 .collect(Collectors.toList());
     }
 
