@@ -4,6 +4,7 @@ import hello.carracinggame.domain.dto.GameResult;
 import hello.carracinggame.utils.MoveCondition;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,7 +53,7 @@ public class Play {
 
     private int findMaxPosition() {
         return this.cars.stream()
-                .max((o1, o2) -> o1.getPosition() - o2.getPosition())
+                .max(Comparator.comparingInt(Car::getPosition))
                 .map(Car::getPosition)
                 .orElseThrow(() -> new IllegalStateException("[ERROR] 우승자가 없습니다."));
     }
