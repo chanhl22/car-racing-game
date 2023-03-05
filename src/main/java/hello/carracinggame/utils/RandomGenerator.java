@@ -5,6 +5,7 @@ import java.util.Random;
 public class RandomGenerator implements MovingCondition {
 
     static final Random random = new Random();
+    static final int MAXIMUM_LIMIT = 9;
 
     public RandomGenerator() {
     }
@@ -15,6 +16,6 @@ public class RandomGenerator implements MovingCondition {
     }
 
     private int generateRandom() {
-        return random.nextInt(9);
+        return random.nextInt(MAXIMUM_LIMIT);
     }
 }
