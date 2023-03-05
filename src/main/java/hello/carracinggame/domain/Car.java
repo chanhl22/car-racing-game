@@ -15,14 +15,6 @@ public class Car {
         this.position = position;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
     public Car moveForward(int randomNumber) {
         if (randomNumber >= MINIMUM) {
             this.position++;
@@ -32,5 +24,13 @@ public class Car {
 
     public boolean isMaximumPosition(int maxPosition) {
         return this.position == maxPosition;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
     }
 }
